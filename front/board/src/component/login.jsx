@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
+import Layout from "./Layout";
 
 function Login() {
     const [loginId, setLoginId] = useState("");
@@ -34,15 +35,28 @@ function Login() {
     };
 
     return (
-        <>
-            <h2>로그인페이지</h2>
+        <Layout title="로그인">
             <form onSubmit={handleSubmit}>
-                <input placeholder="아이디" name="loginId" value={loginId} onChange={(e) => setLoginId(e.target.value)} />
-                <input type="password" placeholder="비밀번호" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <button type="submit">로그인</button>
+                <div className="wrap_write">
+                    <dl className="write_tit">
+                        <dt>아이디</dt>
+                        <dd><input className="comm_inp_text" style={{ width: "100%" }} placeholder="아이디" name="loginId" value={loginId} onChange={(e) => setLoginId(e.target.value)} /></dd>
+                    </dl>
+                    <dl className="write_tit">
+                        <dt>비밀번호</dt>
+                        <dd><input type="password" className="comm_inp_text" style={{ width: "100%" }} placeholder="비밀번호" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /></dd>
+                    </dl>
+                </div>
+                <div className="comm_paging_btn">
+                    <div className="flo_side left">
+                        <button type="button" className="comm_btn_round addUserbtn" onClick={onAddUser}>회원가입</button>
+                    </div>
+                    <div className="flo_side right">
+                        <button type="submit" className="comm_btn_round fill">로그인</button>
+                    </div>
+                </div>
             </form>
-            <button className="addUserbtn" onClick={onAddUser}>회원가입</button>
-        </>
+        </Layout>
     );
 }
 

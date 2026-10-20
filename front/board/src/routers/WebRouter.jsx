@@ -5,6 +5,7 @@ import AddUser from '../component/addUser';
 import Board from '../component/Board';
 import Write from '../component/write';
 import ContentPage from '../component/ContentPage';
+import Edit from '../component/edit';
 
 const WebRouter = () => {
 
@@ -19,6 +20,7 @@ const WebRouter = () => {
                     <Route path='/board' element={<Board/>}></Route>                    
                     <Route path='/write' element={<Write/>}></Route>
                     <Route path='/contentpage' element={<ContentPage/>}></Route>
+                    <Route path='/edit' element={<Edit/>}></Route>
                 </Routes>
             
             </BrowserRouter>

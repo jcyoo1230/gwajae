@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import Layout from "./Layout";
 
 const MIN_PASSWORD_LENGTH = 8;
 
@@ -81,20 +82,35 @@ function AddUser() {
     };
 
     return (
-        <>
-            <h2>회원 가입 페이지</h2>
+        <Layout title="회원 가입">
             <form onSubmit={handleSubmit}>
-                <input placeholder="사용할 아이디" name="loginId" value={loginId} onChange={onChangeId} /> <br />
-                <button type="button" onClick={dupCheck}>중복 확인</button>&emsp;
-                {msg}
-                <br />
-                <input type="password" placeholder={`비밀번호 (${MIN_PASSWORD_LENGTH}자 이상)`} name="password"
-                       value={password} onChange={(e) => setPassword(e.target.value)} />
-                <br />
-                <button type="submit" disabled={!idChecked}>회원가입</button>
+                <div className="wrap_write">
+                    <dl className="write_tit">
+                        <dt>아이디</dt>
+                        <dd>
+                            <input className="comm_inp_text" style={{ width: 300 }} placeholder="사용할 아이디" name="loginId" value={loginId} onChange={onChangeId} />
+                            <button type="button" className="comm_btn fill ml_5" onClick={dupCheck}>중복 확인</button>
+                            <span className="ml_10">{msg}</span>
+                        </dd>
+                    </dl>
+                    <dl className="write_tit">
+                        <dt>비밀번호</dt>
+                        <dd>
+                            <input type="password" className="comm_inp_text" style={{ width: 300 }} placeholder={`비밀번호 (${MIN_PASSWORD_LENGTH}자 이상)`} name="password"
+                                   value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </dd>
+                    </dl>
+                </div>
+                <div className="comm_paging_btn">
+                    <div className="flo_side left">
+                        <button type="button" className="comm_btn_round" onClick={backbtn}>돌아가기</button>
+                    </div>
+                    <div className="flo_side right">
+                        <button type="submit" className="comm_btn_round fill" disabled={!idChecked}>회원가입</button>
+                    </div>
+                </div>
             </form>
-            <button onClick={backbtn}>돌아가기</button>
-        </>
+        </Layout>
     );
 }
 

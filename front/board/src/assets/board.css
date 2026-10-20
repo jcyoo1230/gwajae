@@ -212,7 +212,7 @@ body {
   height: 26px;
   margin: 17px 0;
   font-size: 0px;
-  background: url(./_images/logo.svg) no-repeat;
+  background: url(../assets/_images/logo.svg) no-repeat;
   background-size: auto 26px;
   vertical-align: middle;
 }
@@ -268,12 +268,12 @@ body {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background:url(../_images/comm_check_off.png) no-repeat;
+  background:url(../assets/_images/comm_check_off.png) no-repeat;
   background-size:18px auto;
   vertical-align: top;
 }
 .comm_check input:checked+.ico_txt::before {
-  background-image:url(../_images/comm_check_on.png);
+  background-image:url(../assets/_images/comm_check_on.png);
 }
 .comm_check input:disabled,
 .comm_check input:disabled+.ico_txt {
@@ -383,13 +383,13 @@ body {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background: url(../_images/comm_radio_off.png) no-repeat;
+  background: url(../assets/_images/comm_radio_off.png) no-repeat;
   background-size: 18px auto;
   vertical-align: top;
 }
 .comm_radio input:checked+.ico_txt::before {
   content: '';
-  background-image: url(../_images/comm_radio_on.png);
+  background-image: url(../assets/_images/comm_radio_on.png);
 }
 .comm_radio input:disabled,
 .comm_radio input:disabled+.ico_txt {
@@ -428,7 +428,7 @@ body {
   font-size: 12px;
   color: #000;
   -webkit-appearance: none;
-  background: #fff url(../_images/ic_calendar.png) 100% 50% no-repeat;
+  background: #fff url(../assets/_images/ic_calendar.png) 100% 50% no-repeat;
   background-size: 22px auto;
   box-sizing: border-box;
 }
@@ -451,7 +451,7 @@ body {
   font-size: 12px;
   color: #000;
   -webkit-appearance: none;
-  background: #fff url(../_images/sel_arr.png) 100% 50% no-repeat;
+  background: #fff url(../assets/_images/sel_arr.png) 100% 50% no-repeat;
   background-size: 18px auto;
   box-sizing: border-box;
 }
@@ -554,7 +554,7 @@ body {
   height: 30px;
   margin-top: -15px;
   font-size: 0px;
-  background: url(../_images/ic_search.png) 50% 50% no-repeat;
+  background: url(../assets/_images/ic_search.png) 50% 50% no-repeat;
   background-size: 24px auto;
 }
 
@@ -649,7 +649,7 @@ body {
 .ico_img.flie {
   width: 10px;
   height: 16px;
-  background: url(../_images/paperclip.svg) no-repeat;
+  background: url(../assets/_images/paperclip.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 16px auto;
 }
@@ -657,7 +657,7 @@ body {
 .ico_img.lock {
   width: 14px;
   height: 16px;
-  background: url(../_images/lock-fill.svg) no-repeat;
+  background: url(../assets/_images/lock-fill.svg) no-repeat;
   background-position: 50% 50%;
   background-size: 16px auto;
 }
@@ -731,16 +731,16 @@ body {
   background-color:transparent;
 }
 .comm_paging_btn .btn_page.first {
-  background-image: url(../_images/btn_page_first.png);
+  background-image: url(../assets/_images/btn_page_first.png);
 }
 .comm_paging_btn .btn_page.prev {
-  background-image: url(../_images/btn_page_prev.png);
+  background-image: url(../assets/_images/btn_page_prev.png);
 }
 .comm_paging_btn .btn_page.next {
-  background-image: url(../_images/btn_page_next.png);
+  background-image: url(../assets/_images/btn_page_next.png);
 }
 .comm_paging_btn .btn_page.last {
-  background-image: url(../_images/btn_page_last.png);
+  background-image: url(../assets/_images/btn_page_last.png);
 }
 
 .comm_paging_btn .wr_page {
@@ -1044,7 +1044,7 @@ body {
   width: 30px;
   height: 30px;
   font-size: 0px;
-  background: url(../_images/btn_close.png) no-repeat;
+  background: url(../assets/_images/btn_close.png) no-repeat;
   background-size: 30px auto;
   vertical-align: middle;
 }

@@ -31,6 +31,7 @@ public class UserService {
     public void signup(UserRequest req) {
         String loginId = req.getLoginId();
         String password = req.getPassword();
+        String email = req.getEmail();
 
         if (loginId == null || loginId.isBlank() || password == null || password.isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "아이디와 비밀번호를 입력해주세요.");
@@ -48,6 +49,7 @@ public class UserService {
         User user = new User();
         user.setLoginId(loginId);
         user.setPassword(passwordEncoder.encode(password));
+        user.setEmail(email);
         userRepo.save(user);
     }
 
