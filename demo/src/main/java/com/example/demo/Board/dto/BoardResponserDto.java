@@ -18,4 +18,8 @@ public class BoardResponserDto {
         this.create_date = entity.getCreate_date();
         this.view_count = entity.getView_count();
     }
+
+    public void BoardCntDto(Board entity){
+        this.view_count ++;
+    }
 }

@@ -47,4 +47,8 @@ public class Board {
         this.title = title;
         this.content = content;
     }
+
+    public void updateCnt(int view_count){
+        this.view_count += view_count;
+    }
 }

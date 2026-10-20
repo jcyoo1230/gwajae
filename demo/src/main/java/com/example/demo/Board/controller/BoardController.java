@@ -35,9 +35,15 @@ public class BoardController {
         boardService.update(id, authentication.getName(), dto);
     }
 
+    @DeleteMapping("/posts/{id}")
+    public void delete(@PathVariable Long id, Authentication authentication) {
+        boardService.delete(id, authentication.getName());
+    }
+
     @GetMapping("/posts/{id}") //이걸 아마 자세히 보기로 해야 할거 같음
-        public BoardResponserDto findById(@PathVariable Long id){
-        return boardService.findById(id);
+    public BoardResponserDto findById(@PathVariable Long id,
+                                      @RequestParam(defaultValue = "false") boolean count){
+        return boardService.findById(id, count);
     }
 
 }

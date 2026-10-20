@@ -27,7 +27,7 @@ public class BoardService {
         board.setTitle(req.getTitle());
         board.setContent(req.getContent());
         board.setCreate_date(req.getCreate_date());
-        board.setView_count(req.getView_count());
+        board.setView_count(0); // 조회수는 클라이언트 값이 아니라 항상 0에서 시작
         boardRepo.save(board);
     }
 
@@ -41,7 +41,22 @@ public class BoardService {
         board.update(dto.getTitle(), dto.getContent());   // 더티 체킹으로 UPDATE 실행
     }
 
-    public BoardResponserDto findById(Long id) {
+    @Transactional
+    public void delete(Long id, String loginId) {
+        Board board = boardRepo.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "게시글이 없습니다. id=" + id));
+        if (!board.getAuthor().equals(loginId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "본인 글만 삭제할 수 있습니다.");
+        }
+        boardRepo.delete(board);
+    }
+
+    // countView=true 이면 조회수를 1 올린 뒤 글을 돌려준다
+    @Transactional
+    public BoardResponserDto findById(Long id, boolean countView) {
+        if (countView) {
+            boardRepo.increaseViewCount(id);
+        }
         Board entity = boardRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("게시글이 없습니다. id=" + id));
         return new BoardResponserDto(entity);

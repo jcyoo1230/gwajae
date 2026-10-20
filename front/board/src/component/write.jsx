@@ -146,7 +146,7 @@ function write () {
                             <div className="write_file">
                                 <strong className="tit_file"><span className="ico_img flie">첨부파일</span> 첨부파일</strong>
                                 <div className="cont_file">
-                                    <input type="file" className="comm_inp_file" styled="width:100%"/>
+                                    <input type="file" multiple className="comm_inp_file" styled="width:100%"/>
                                     <ul className="list_file_inline mt_5">
                                        
                                     </ul>
@@ -159,7 +159,7 @@ function write () {
                                     <button className="comm_btn_round fill">목록</button>
                                 </div>
                             <div className="flo_side right">
-                                <button type="button"className="comm_btn_round" onClick={leave}>취소</button>
+                                <button type="button"className="comm_btn_round" onClick={()=> leave(-1)}>취소</button>
                                 <button type="submit" className ="comm_btn_round fill" >등록</button>   
                             </div>
                         </div>
